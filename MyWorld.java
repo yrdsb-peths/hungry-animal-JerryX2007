@@ -17,12 +17,19 @@ public class MyWorld extends World
     public MyWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 200);
-        Label scoreLabel = new Label(0, 80);
+        scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         createApple();
+    }
+    /**
+     * Ends the game and draws a giant "GameOver" label on the screen
+     */
+    public void gameOver() {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 300);
     }
     /**
      * Increase the scoreboard every time the elephant eats an apple
