@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
-    GreenfootSound elephantSound = new GreenfootSound("e.mp3");
+    GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
     public void act()
     {
         if(Greenfoot.isKeyDown("left")) {
