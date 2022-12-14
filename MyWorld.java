@@ -9,7 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
+    public int lives = 3;
     Label scoreLabel;
+    Label lifeCounter;
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -21,7 +23,10 @@ public class MyWorld extends World
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 200);
         scoreLabel = new Label(0, 80);
+        lifeCounter = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
+        addObject(lifeCounter, 550, 50);
+        lifeCounter.setValue(lives);
         createApple();
     }
     /**
@@ -46,5 +51,12 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = Greenfoot.getRandomNumber(1);
         addObject(apple, x, y);
+    }
+    public int getLives() {
+        return lives;
+    }
+    public void lifeLost() {
+        lives--;
+        lifeCounter.setValue(lives);
     }
 }
